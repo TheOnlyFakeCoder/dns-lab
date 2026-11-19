@@ -1,0 +1,7 @@
+cd /home/mrcomputer/dns-lab
+./lab.sh start      # levanta los 4 named (ya está arriba)
+./lab.sh test       # valida SOA, delegaciones y www.alpha.unsigned
+./lab.sh dig www.alpha.unsigned A    # consulta usando el recursivo
+./lab.sh dig @172.30.0.30 www.alpha.unsigned A   # directo al autoritativo
+./lab.sh logs recursive1
+./lab.sh stop

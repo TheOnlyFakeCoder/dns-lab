@@ -1,0 +1,5 @@
+$TTL 86400
+
+. IN NS ns.root.
+
+ns.root. IN A 172.30.0.10
