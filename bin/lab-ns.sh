@@ -43,7 +43,7 @@ for _ in $(seq 1 75); do
     if [[ -n "$(dig +time=1 +tries=1 @$ROOT_IP . SOA +short 2>/dev/null)" ]] &&
        [[ -n "$(dig +time=1 +tries=1 @$UNSIGNED_IP unsigned. SOA +short 2>/dev/null)" ]] &&
        [[ -n "$(dig +time=1 +tries=1 @$ALPHA_IP alpha.unsigned. SOA +short 2>/dev/null)" ]] &&
-       [[ "$(dig +time=1 +tries=1 @$RECURSIVE_IP www.alpha.unsigned. A +short 2>/dev/null)" == "172.30.0.30" ]]; then
+       [[ -n "$(dig +time=1 +tries=1 @$RECURSIVE_IP chaos txt version.bind +short 2>/dev/null)" ]]; then
         ready=1
         break
     fi
